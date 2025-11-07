@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Global } from '../Global';
+import { environment } from '../../environments/environment.development';
 
 @Injectable()
 export class ServicePersonas {
@@ -15,8 +17,11 @@ export class ServicePersonas {
   //   let request = 'api/personas';
   //   return this._http.get(urlApi + request);
   // }
+
   getPersonasPromise(): Promise<any> {
-    let urlApi = 'https://servicioapipersonasmvcpgs.azurewebsites.net/';
+    // let urlApi = 'https://servicioapipersonasmvcpgs.azurewebsites.net/';
+    // let urlApi = Global.urlApiPersonas;
+    let urlApi = environment.urlApiPersonas;
     let request = 'api/personas';
     let promise = new Promise((resolve) => {
       this._http.get(urlApi + request).subscribe((response) => {
