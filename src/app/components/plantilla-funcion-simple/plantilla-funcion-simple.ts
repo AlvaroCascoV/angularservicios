@@ -19,8 +19,8 @@ export class PlantillaFuncionSimple {
     });
   }
 
-  getPlantillaFunciones(funcion: string) {
-    this._service.getPlantillaFunciones(funcion).then((response) => {
+  getPlantillaFuncion(funcion: string) {
+    this._service.getPlantillaFuncion(funcion).then((response) => {
       this.plantilla = response;
     });
   }

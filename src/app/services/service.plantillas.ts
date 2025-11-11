@@ -11,7 +11,7 @@ export class ServicePlantillas {
     return funciones;
   }
 
-  getPlantillaFunciones(funcion: string): Promise<Array<Plantilla>> {
+  getPlantillaFuncion(funcion: string): Promise<Array<Plantilla>> {
     let request = '/api/Plantilla/PlantillaFuncion/' + funcion;
     let url = environment.urlApiPlantillas + request;
     const plantilla = fetch(url).then((response) => response.json());
