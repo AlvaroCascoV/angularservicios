@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ServiceCoches {
-  constructor(private _http: HttpClient) {}
+  // constructor(private _http: HttpClient) {}
 
   // getCochesHttpClient(): Observable<any> {
   //   let request = 'webresources/coches';
