@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServicePlantillas } from '../../services/service.plantillas';
 import { Plantilla } from '../../models/plantilla';
 
@@ -8,13 +8,14 @@ import { Plantilla } from '../../models/plantilla';
   templateUrl: './plantilla-funcion-simple.html',
   styleUrl: './plantilla-funcion-simple.css',
 })
-export class PlantillaFuncionSimple {
+export class PlantillaFuncionSimple implements OnInit {
   public funciones!: Array<string>;
   public plantilla!: Array<Plantilla>;
+
   constructor(private _service: ServicePlantillas) {}
 
   ngOnInit(): void {
-    this._service.getFunciones().then((response) => {
+    this._service.getFunciones().subscribe((response) => {
       this.funciones = response;
     });
   }
