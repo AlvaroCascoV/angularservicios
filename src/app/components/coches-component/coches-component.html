@@ -1,0 +1,13 @@
+<div>
+  <h1 style="color: blue">Api Coches Fetch</h1>
+
+  @for (car of coches; track car) {
+  <div class="card" style="width: 18rem">
+    <img src="{{ car.imagen }}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ car.marca }} {{ car.modelo }}</h5>
+      <p class="card-text">{{ car.conductor }}</p>
+    </div>
+  </div>
+  }
+</div>
