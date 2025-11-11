@@ -8,28 +8,29 @@ import { Observable } from 'rxjs';
 export class ServiceCoches {
   constructor(private _http: HttpClient) {}
 
-  getCochesHttpClient(): Observable<any> {
-    let request = 'webresources/coches';
-    let url = environment + request;
-    return this._http.get(url);
-  }
+  // getCochesHttpClient(): Observable<any> {
+  //   let request = 'webresources/coches';
+  //   let url = environment + request;
+  //   return this._http.get(url);
+  // }
 
-  getCoches(): any {
+  getCoches(): Promise<Array<Coche>> {
     let request = 'webresources/coches';
     let url = environment.urlApiCoches + request;
-    fetch(url).then((response) => {
-      return response;
-    });
+    //EXTRAER LOS DATOS TENEMOS QUE SEGUIR HACIENDOLO
+    //LA DIFERENCIA ESTA EN LA SINTAXIS
+    const coches = fetch(url).then((response) => response.json());
+    return coches;
   }
 
-  getCochesPromise(): Promise<any> {
-    let request = 'webresources/coches';
-    let url = environment.urlApiCoches + request;
-    let promise = new Promise((resolve) => {
-      fetch(url).then((response) => {
-        resolve(response.json());
-      });
-    });
-    return promise;
-  }
+  // getCochesPromise(): Promise<any> {
+  //   let request = 'webresources/coches';
+  //   let url = environment.urlApiCoches + request;
+  //   let promise = new Promise((resolve) => {
+  //     fetch(url).then((response) => {
+  //       resolve(response.json());
+  //     });
+  //   });
+  //   return promise;
+  // }
 }

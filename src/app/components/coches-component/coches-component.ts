@@ -13,14 +13,18 @@ export class CochesComponent implements OnInit {
   constructor(private _service: ServiceCoches) {}
 
   ngOnInit(): void {
-    this._service.getCochesPromise().then((response) => {
-      this.coches = response;
-    });
+    // this._service.getCochesPromise().then((response) => {
+    //   this.coches = response;
+    // });
+
+    // this._service.getCochesHttpClient().subscribe((response) => {
+    //   this.coches = response;
+    // });
 
     // this.coches = this._service.getCoches();
 
-    // this._service.getCoches().then((response) => {
-    //   this.coches = response;
-    // });
+    this._service.getCoches().then((response) => {
+      this.coches = response;
+    });
   }
 }
