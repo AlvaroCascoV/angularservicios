@@ -13,9 +13,10 @@ import { PlantillaFuncionSimple } from './components/plantilla-funcion-simple/pl
 import { MenuComponent } from './components/menu-component/menu-component';
 import { ServicePlantillas } from './services/service.plantillas';
 import { FormsModule } from '@angular/forms';
+import { PlantillaFuncionMultiple } from './components/plantilla-funcion-multiple/plantilla-funcion-multiple';
 
 @NgModule({
-  declarations: [App, PersonasApiComponent, CochesComponent, PlantillaFuncionSimple, MenuComponent],
+  declarations: [App, PersonasApiComponent, CochesComponent, PlantillaFuncionSimple, MenuComponent, PlantillaFuncionMultiple],
   imports: [BrowserModule, AppRoutingModule, PersonasStandaloneComponent, FormsModule],
   providers: [
     provideBrowserGlobalErrorListeners(),
