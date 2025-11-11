@@ -1,0 +1,44 @@
+<div>
+  <h1>Plantillas</h1>
+  <form #plantillaForm="ngForm">
+    @if (funciones) {
+    <select class="form-select" name="selectfuncion" #selectfuncion>
+      <option>-- Elige funcion --</option>
+      @for (fun of funciones; track fun) {
+      <option>{{ fun }}</option>
+      }
+    </select>
+    <button class="btn btn-primary" (click)="getPlantillaFunciones(selectfuncion.value)">
+      Mostra plantilla</button
+    >}
+  </form>
+
+  @if (plantilla) {
+  <table class="table table-striped table-primary">
+    <thead>
+      <tr>
+        <th>Id Empleado</th>
+        <th>Id Hospital</th>
+        <th>Id Sala</th>
+        <th>Apellido</th>
+        <th>Función</th>
+        <th>Turno</th>
+        <th>Salario</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (empleado of plantilla; track empleado) {
+      <tr>
+        <td>{{ empleado.idEmpleado }}</td>
+        <td>{{ empleado.idHospital }}</td>
+        <td>{{ empleado.idSala }}</td>
+        <td>{{ empleado.apellido }}</td>
+        <td>{{ empleado.funcion }}</td>
+        <td>{{ empleado.turno }}</td>
+        <td>{{ empleado.salario }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  }
+</div>
